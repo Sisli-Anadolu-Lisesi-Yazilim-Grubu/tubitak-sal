@@ -5,7 +5,12 @@
     {
       "src": "favicon.png",
       "sizes": "128x128 64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
+    },
+    {
+      "src": "sal-logo.jpg",
+      "sizes": "402x402",
+      "type": "image/jpg"
     }
   ],
   "start_url": ".",

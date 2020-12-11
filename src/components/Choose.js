@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import './Choose.css';
 import salLogo from './../assets/img/sal-logo.svg';
+import { Link } from 'react-router-dom';
 
 class Choose extends React.Component {
     constructor (props) {
@@ -45,51 +46,46 @@ class Choose extends React.Component {
         this.setState({ choice: { year: this.state.choice.year, type: type } });
     }
 
-    send () {
-        this.props.dispatch({ type: 'CHOOSED', payload: Object.assign({}, this.state.choice) });
+    send (e) {
+        if (!(this.state.choice.year && this.state.choice.type))
+            e.preventDefault();
     }
 
     render () {
-        if (!(this.props.choice.year && this.props.choice.type)) {
-            return (
-                <div id="choose" className="card bg-dark">
-                    <img className="card-img-top" src={salLogo} alt="Şişli Anadolu Lisesi Logo" />
-                    <div className="card-body">
-                        <h4 className="card-title">Lütfen Yarışma Yılını ve Türünü Seçiniz</h4>
-                        <div className="dropdown">
-                            <button className="btn btn-light dropdown-toggle" type="button" id="select-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Yıl Seçiniz
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="select-year">
-                                {this.state.years.map((val, i) => (
-                                    <a onClick={this.selectYear} className="dropdown-item" href="." key={i}>{val}</a>
-                                ))}
-                            </div>
+        return (
+            <div id="choose" className="card bg-dark">
+                <img className="card-img-top" src={salLogo} alt="Şişli Anadolu Lisesi Logo" />
+                <div className="card-body">
+                    <h4 className="card-title">Lütfen Yarışma Yılını ve Türünü Seçiniz</h4>
+                    <div className="dropdown">
+                        <button className="btn btn-light dropdown-toggle" type="button" id="select-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Yıl Seçiniz
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="select-year">
+                            {this.state.years.map((val, i) => (
+                                <a onClick={this.selectYear} className="dropdown-item" href="." key={i}>{val}</a>
+                            ))}
                         </div>
-                        <div className="dropdown">
-                            <button className="btn btn-light dropdown-toggle" type="button" id="select-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Tür Seçiniz
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="select-type">
-                                {this.state.types.map((val, i) => (
-                                    <a onClick={this.selectType} className="dropdown-item" href="." key={i}>{val}</a>
-                                ))}
-                            </div>
-                        </div>
-                        <button onClick={this.send} type="button" id="competition" className="btn">Gönder</button>
                     </div>
+                    <div className="dropdown">
+                        <button className="btn btn-light dropdown-toggle" type="button" id="select-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tür Seçiniz
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="select-type">
+                            {this.state.types.map((val, i) => (
+                                <a onClick={this.selectType} className="dropdown-item" href="." key={i}>{val}</a>
+                            ))}
+                        </div>
+                    </div>
+                    <Link onClick={this.send} to={'/projects/' + this.state.choice.year + '/' + this.state.choice.type + '/selector'}><button type="button" id="competition" className="btn">Gönder</button></Link>
                 </div>
-            );
-        } else return null;
+            </div>
+        );
     }
 }
 
 const mapStateToProps = state => {
-    return { choice: state.choice, projects: state.projects };
+    return { projects: state.projects };
 };
 
-const mapDispatchToProps = dispatch => {
-    return { dispatch };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Choose);
+export default connect(mapStateToProps)(Choose);

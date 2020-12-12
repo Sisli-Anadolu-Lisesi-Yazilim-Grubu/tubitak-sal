@@ -11,17 +11,13 @@ class Main extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    {getYears(this.props.projects).map(val => {
-                        let re = [];
-                        let types = getTypes(this.props.projects, val);
-                        for (let i = 0; i < types.length; i++) {
-                            re.push(<Route key={i} path={`/projects/${val}/${types[i]}`} render={() => (
-                                <ProjectRouter year={val} type={types[i]} />
-                            )} />);
-                        }
-                        
-                        return re;
-                    })}
+                    {getYears(this.props.projects).map(val => (
+                        getTypes(this.props.projects, val).map((val1, i) => (
+                            <Route key={i} path={`/projects/${val}/${val1}`} render={() => (
+                                <ProjectRouter year={val} type={val1} />
+                            )} />
+                        ))
+                    ))}
                     <Route render={() => (<Error type='PAGE_NOT_FOUND' />)} />
                 </Switch>
             </BrowserRouter>

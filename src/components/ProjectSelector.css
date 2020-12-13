@@ -1,0 +1,25 @@
+.project-preview-list {
+    margin: 1em;
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-preview {
+    padding: 1em;
+    margin-bottom: 3px;
+    background-color: #252526;
+    border-radius: 2%;
+}
+
+.project-preview:hover {
+    background-color: #333;
+}
+
+.project-selector a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-selector a {
+    color: inherit;
+}

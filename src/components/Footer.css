@@ -1,0 +1,9 @@
+.sal-footer {
+    color: #fff;
+    background-color: #00005f;
+    overflow-x: hidden;
+}
+
+.sal-footer a {
+    color: inherit;
+}

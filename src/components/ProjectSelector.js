@@ -23,7 +23,7 @@ class ProjectSelector extends React.Component {
                 <main className="project-selector">
                     <ul className="project-preview-list">
                         {this.state.projects.map((val, i) => (
-                            <Link key={i} to={`/projects/${this.props.year}/${this.props.type}/${val.hash}`}>
+                            <Link key={i} to={`/projects/${val.year}/${val.type}/${val.hash}`}>
                                 <li className="project-preview">{val.title}</li>
                             </Link>
                         ))}

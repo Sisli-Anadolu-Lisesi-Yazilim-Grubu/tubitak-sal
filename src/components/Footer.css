@@ -7,3 +7,7 @@
 .sal-footer a {
     color: inherit;
 }
+
+.sal-footer a:hover {
+    color: #343a40;
+}

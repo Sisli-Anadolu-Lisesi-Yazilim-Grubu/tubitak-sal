@@ -1,0 +1,12 @@
+.middle-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}

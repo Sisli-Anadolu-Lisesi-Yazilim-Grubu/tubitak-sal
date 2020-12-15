@@ -9,7 +9,7 @@ class Footer extends React.Component {
                     <div className="row px-3">
                     <small className="ml-4 ml-sm-5 mb-2">
                         Telif Hakkı &copy; 2020 Şişli Anadolu Lisesi. Hiçbir proje verisi Şişli Anadolu Lisesi Müdürlüğü'nün 
-                        açık izni olmadan <em>kopyalanmaz, değiştirelemez, dağıtalamaz, yayımlanamaz</em>.
+                        açık izni olmadan <i>kopyalanamaz, değiştirilemez, dağıtılamaz, yayımlanamaz</i>.
                     </small>
                     <div className="social-contact ml-4 ml-sm-auto">
                         <a href="http://sislianadolu.meb.k12.tr" rel="noreferrer" target="_blank">

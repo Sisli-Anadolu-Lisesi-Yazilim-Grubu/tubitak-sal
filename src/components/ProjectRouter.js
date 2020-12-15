@@ -18,7 +18,7 @@ class ProjectRouter extends React.Component {
                     {filterProjects(this.props.projects, this.props.year, this.props.type).map((val, i) => (
                         <Route key={i} path={'/projects/' + val.year + '/' + val.type + '/' + val.hash} render={() => (
                             <View project={val} />
-                        )} />
+                        )} exact />
                     ))}
                     <Route render={() => (<Error type='PAGE_NOT_FOUND' />)} />
                 </Switch>

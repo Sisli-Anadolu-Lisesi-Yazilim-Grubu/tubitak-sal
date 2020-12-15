@@ -8,7 +8,8 @@
     padding: 1em;
     margin-bottom: 3px;
     background-color: #252526;
-    border-radius: 2%;
+    border-radius: 10px;
+    font-size: larger;
 }
 
 .project-preview:hover {
@@ -22,4 +23,47 @@
 
 .project-selector a {
     color: inherit;
+}
+
+.img-preview {
+    float: right;
+    height: 3em;
+    width: 3em;
+}
+
+.project-preview-layout {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.project-selector-head {
+    margin: 1rem 0;
+}
+
+.sal-search {
+    padding: 5px 1%;
+    background-color: #1e1e1e;
+    border-radius: 3px;
+}
+
+.sal-search > input {
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    margin-left: 10px;
+    width: 85%;
+}
+
+.sal-search:hover, .sal-search.focus {
+    border: 1px solid #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .sal-search > svg {
+        margin-left: 10px;
+    }
+
+    .project-preview-list {
+        margin: .5em;
+    }
 }

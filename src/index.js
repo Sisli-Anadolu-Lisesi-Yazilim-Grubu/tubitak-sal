@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import './index.css';
 import store from './app/store';
 import Choose from './components/Choose';
 import Main from './components/Main';

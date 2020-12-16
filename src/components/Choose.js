@@ -77,7 +77,7 @@ class Choose extends React.Component {
                             ))}
                         </div>
                     </div>
-                    <Link onClick={this.send} to={'/projects/' + this.state.choice.year + '/' + this.state.choice.type + '/selector'}><button type="button" id="competition" className="btn">Gönder</button></Link>
+                    <Link onClick={this.send} to={'/projects/' + this.state.choice.year + '/' + this.state.choice.type}><button type="button" id="competition" className="btn">Gönder</button></Link>
                 </div>
             </div>
         );

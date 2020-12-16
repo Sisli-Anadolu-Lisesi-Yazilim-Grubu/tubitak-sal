@@ -12,7 +12,7 @@ class ProjectRouter extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path={'/projects/' + this.props.year + '/' + this.props.type + '/selector'} render={() => (
+                    <Route path={'/projects/' + this.props.year + '/' + this.props.type} render={() => (
                         <ProjectSelector year={this.props.year} type={this.props.type} />
                     )} exact />
                     {filterProjects(this.props.projects, this.props.year, this.props.type).map((val, i) => (

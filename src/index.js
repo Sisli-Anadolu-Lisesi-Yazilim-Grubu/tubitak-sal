@@ -4,22 +4,44 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
+import firebase from './app/firebase';
 import store from './app/store';
+import Loading from './components/Loading';
 import Choose from './components/Choose';
 import Main from './components/Main';
 import Error from './components/Error';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <BrowserRouter>
-                <Switch>
-                    <Route path='/' component={Choose} exact />
-                    <Route path='/projects' component={Main} />
-                    <Route render={() => <Error type='PAGE_NOT_FOUND' />} />
-                </Switch>
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+new Promise((resolve) => {
+    const ref = firebase.database().ref('projects');
+    ReactDOM.render(<Loading />, document.getElementById('root'));
+
+    ref.on('value', snapshot => {
+        resolve(snapshot.val());
+    });
+}).then((items) => {
+    let projects = [];
+    for (let i in items) {
+        projects.push({
+            year: items[i].year,
+            type: items[i].type,
+            title: i,
+            hash: items[i].hash,
+            img: items[i].img
+        });
+    }
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <Provider store={store(projects)}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path='/' component={Choose} exact />
+                        <Route path='/projects' component={Main} />
+                        <Route render={() => <Error type='PAGE_NOT_FOUND' />} />
+                    </Switch>
+                </BrowserRouter>
+            </Provider>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+});

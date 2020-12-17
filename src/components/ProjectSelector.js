@@ -6,6 +6,7 @@ import './ProjectSelector.css';
 import { filterProjects } from './../app/store_functions';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import loading from './../assets/img/loading.svg';
 
 class ProjectSelector extends React.Component {
     constructor (props) {
@@ -17,6 +18,7 @@ class ProjectSelector extends React.Component {
         };
 
         this.search = this.search.bind(this);
+        this.imageLoad = this.imageLoad.bind(this);
     }
 
     search (e) {
@@ -32,6 +34,11 @@ class ProjectSelector extends React.Component {
 
             this.setState({ projects: arr });
         } else this.setState({ projects: this.state.noFilterProj });
+    }
+
+    imageLoad (e) {
+        e.currentTarget.previousElementSibling.remove();
+        e.currentTarget.style.display = "inline";
     }
 
     render () {
@@ -62,7 +69,8 @@ class ProjectSelector extends React.Component {
                                         <div>
                                             <div className="middle-wrapper">
                                                 <div className="middle">
-                                                    <img className="img-preview" src={val.img} alt="preview" />
+                                                    <img className="img-preview" src={loading} alt="loader" />
+                                                    <img style={{display: "none"}} onLoad={this.imageLoad} className="img-preview" src={val.img} alt="preview" />
                                                 </div>
                                             </div>
                                         </div>

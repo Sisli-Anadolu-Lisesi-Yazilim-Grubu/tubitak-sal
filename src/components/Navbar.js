@@ -3,7 +3,7 @@ import React from 'react';
 class Navbar extends React.Component {
     render () {
         return (
-            <nav style={{backgroundColor: "#252526"}} className="sal-navbar navbar navbar-expand-sm navbar-dark">
+            <nav style={{backgroundColor: "#252526"}} className="navbar navbar-expand-sm navbar-dark">
                 <div className="float-left">
                     <a href={this.props.href}>
                         <button className="btn">

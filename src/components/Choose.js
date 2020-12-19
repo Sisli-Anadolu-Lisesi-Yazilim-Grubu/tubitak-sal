@@ -68,7 +68,8 @@ class Choose extends React.Component {
                         </div>
                     </div>
                     <div className="dropdown">
-                        <button className="btn btn-light dropdown-toggle" type="button" id="select-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button className={"btn btn-light dropdown-toggle" + (this.state.choice.year ? "" : " disabled")} type="button" 
+                                id="select-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tür Seçiniz
                         </button>
                         <div className="dropdown-menu" aria-labelledby="select-type">

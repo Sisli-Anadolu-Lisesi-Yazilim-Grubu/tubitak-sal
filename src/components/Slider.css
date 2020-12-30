@@ -1,0 +1,11 @@
+.slider-img {
+    width: auto;
+    height: 500px;
+    margin: auto;
+}
+
+@media screen and (max-width: 320px) {
+    .slider-img {
+        width: 100%;
+    }
+}

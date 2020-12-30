@@ -10,3 +10,11 @@
     display: table-cell;
     vertical-align: middle;
 }
+
+.warning-red {
+    border-left: 6px solid;
+    padding: 7px;
+    border-color: #d0454c;
+    background-color: #ffbdbd;
+    color: #000;
+}

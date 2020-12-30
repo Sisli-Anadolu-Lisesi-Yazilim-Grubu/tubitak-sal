@@ -8,6 +8,7 @@ import firebase from './app/firebase';
 import store from './app/store';
 import Loading from './components/Loading';
 import Choose from './components/Choose';
+import Download from "./components/Download";
 import Main from './components/Main';
 import Error from './components/Error';
 
@@ -37,6 +38,7 @@ new Promise((resolve) => {
                     <Switch>
                         <Route path='/' component={Choose} exact />
                         <Route path='/projects' component={Main} />
+                        <Route path='/download' component={Download} exact />
                         <Route render={() => <Error type='PAGE_NOT_FOUND' />} />
                     </Switch>
                 </BrowserRouter>

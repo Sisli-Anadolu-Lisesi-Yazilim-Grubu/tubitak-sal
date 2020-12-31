@@ -11,10 +11,32 @@
     vertical-align: middle;
 }
 
+.warning {
+    border-left: 6px solid;
+    padding: 7px;
+    border-color: #e1c542;
+    background-color: #fef1b6;
+    color: #000;
+}
+
 .warning-red {
     border-left: 6px solid;
     padding: 7px;
     border-color: #d0454c;
     background-color: #ffbdbd;
     color: #000;
+}
+
+.warning-section {
+    border-left: 6px solid;
+    padding: 7px;
+    border-color: #5a6268;
+    background-color: #3f464d;
+}
+
+.warning-section-dark {
+    border-left: 6px solid;
+    padding: 7px;
+    border-color: #252526;
+    background-color: #313131;
 }

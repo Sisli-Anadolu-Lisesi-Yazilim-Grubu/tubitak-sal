@@ -11,10 +11,10 @@
     vertical-align: middle;
 }
 
-.warning {
+.warning-default {
     border-left: 6px solid;
     padding: 7px;
-    border-color: #e1c542;
+    border-color: #e1c542 !important;
     background-color: #fef1b6;
     color: #000;
 }

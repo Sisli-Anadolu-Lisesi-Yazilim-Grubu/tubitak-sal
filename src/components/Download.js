@@ -52,7 +52,7 @@ class Download extends React.Component {
                     <div id="tabview">
                         <article id="page0" style={{display: "block"}}>
                             <h3>Android için İndir</h3>
-                            <div className="warning mb-2"><small>Desteklenen <strong>Minimum Android</strong> Sürümü: 4.1 (Jelly Bean)</small></div>
+                            <div className="warning-default mb-2"><small>Desteklenen <strong>Minimum Android</strong> Sürümü: 4.1 (Jelly Bean)</small></div>
                             <div className="warning-red mb-2"><small>Eğer uygulamanın daha eski bir sürümü kurulu ise uygulama kurulumundan önce <b>eski sürümü kaldırmanız gereklidir</b>.</small>
                             </div>
                             <p>

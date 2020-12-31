@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
 import firebase from './app/firebase';
 import store from './app/store';
+import { getMobileOperatingSystem } from './app/app_funcs';
 import Loading from './components/Loading';
 import Choose from './components/Choose';
 import Download from "./components/Download";
@@ -34,6 +35,16 @@ new Promise((resolve) => {
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store(projects)}>
+                {(() => {
+                    if (getMobileOperatingSystem() !== "unknown" 
+                        && new URLSearchParams(window.location.search).get('from') !== 'app')
+                        return (
+                            <div style={{backgroundColor: "#00005f", padding: "5px"}}>
+                                <i>Mobil uygulamamız yayınlandı!</i>
+                                <a className="btn btn-light ml-2" href="/download/?from=app">İndir</a>
+                            </div>
+                        );
+                })()}
                 <BrowserRouter>
                     <Switch>
                         <Route path='/' component={Choose} exact />

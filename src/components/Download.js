@@ -106,7 +106,7 @@ class Download extends React.Component {
                                 <section className="warning-section-dark mb-2">
                                     <h5>Sürüm 1.5.1-beta (<span className="text-danger">Desteklenmiyor</span>)</h5>
                                     <ul>
-                                        <li>Hata Düzeltmeleri.</li>
+                                        <li>Hata düzeltmeleri.</li>
                                     </ul>
                                 </section>
                                 <section className="warning-section-dark mb-2">
@@ -120,7 +120,7 @@ class Download extends React.Component {
                                 <section className="warning-section-dark mb-2">
                                     <h5>Sürüm 1.0.1 (<span className="text-danger">Desteklenmiyor</span>)</h5>
                                     <ul>
-                                        <li>Hata Düzeltmeleri.</li>
+                                        <li>Hata düzeltmeleri.</li>
                                     </ul>
                                 </section>
                                 <section className="warning-section-dark">
@@ -133,7 +133,13 @@ class Download extends React.Component {
                             <section className="warning-section">
                                 <h4>Tübitak ŞAL (Web) Sürüm Geçmişi</h4>
                                 <section className="warning-section-dark mb-2">
-                                    <h5>Sürüm 1.0.0 (<span className="text-success">En Son</span>)</h5>
+                                    <h5>Sürüm 1.0.1 (<span className="text-success">En Son</span>)</h5>
+                                    <ul>
+                                        <li>Hata düzeltmeleri.</li>
+                                    </ul>
+                                </section>
+                                <section className="warning-section-dark mb-2">
+                                    <h5>Sürüm 1.0.0</h5>
                                     <ul>
                                         <li>İndirme sayfası eklendi.</li>
                                         <li>İndirme pop-up'ı oluşturuldu.</li>
@@ -143,7 +149,7 @@ class Download extends React.Component {
                                 <section className="warning-section-dark mb-2">
                                     <h5>Sürüm 0.1.1</h5>
                                     <ul>
-                                        <li>Hata Düzeltmeleri.</li>
+                                        <li>Hata düzeltmeleri.</li>
                                     </ul>
                                 </section>
                                 <section className="warning-section-dark">
